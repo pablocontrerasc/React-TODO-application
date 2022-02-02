@@ -7,7 +7,7 @@ const List = () => {
 
 	let total = listas.length;
 	let cantidad = total > 0 ? `${total} item left` : "";
-	const handleChange = (e) => setLista({ [e.target.name]: e.target.value });
+	const capturarTexto = (e) => setLista({ [e.target.name]: e.target.value });
 	//const handleClick = (e) => console.log("click click");
 
 	// const handleClick = (e) => {
@@ -20,7 +20,7 @@ const List = () => {
 		setListas(newTodos);
 	};
 
-	function handleTest(e) {
+	function agregarLista(e) {
 		if (e.charCode == 13) {
 			setListas([...listas, lista]);
 		}
@@ -38,8 +38,8 @@ const List = () => {
 						<input
 							type="text"
 							name="lista"
-							onChange={handleChange}
-							onKeyPress={handleTest}
+							onChange={capturarTexto}
+							onKeyPress={agregarLista}
 						/>
 						<hr />
 					</div>
